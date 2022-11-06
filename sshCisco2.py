@@ -1,3 +1,4 @@
+import os
 from netmiko import ConnectHandler
 from getpass import getpass
 
@@ -14,4 +15,8 @@ device = {
 c = ConnectHandler(**device)
 
 output = c.send_command('show run')
-print(output)
+
+f = open('backup.conf', 'x')
+
+f.write(output)
+f.close()

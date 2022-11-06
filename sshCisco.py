@@ -12,3 +12,6 @@ device = {
 }
 
 c = ConnectHandler(**device)
+
+output = c.send_command('show run')
+print(output)
